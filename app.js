@@ -9,7 +9,7 @@ const user = require("./models/user");
 const userRoutes = require("./api/routes/user");
 const checkAuth = require("./middleware/check-auth");
 const app = express();
-const PORT = process.env.PORT || 8086;
+const PORT = process.env.PORT || 5000;
 const feedbacksys = require("./api/controllers/feedback");
 //DB Connection
 mongoose.Promise = global.Promise;
@@ -46,9 +46,7 @@ app.get("/feedback_summary", feedbacksys.get_feedbacksummary);
 app.delete("/feedback/:id", feedbacksys.delete_feedback);
 app.put("/feedback/:id", feedbacksys.put_feedback);
 app.put("/edit/:id", feedbacksys.put_feedback_edit);
-if (process.env.NODE_ENV === "production") {
-  app.use(express.static("build"));
-}
+
 //server
 app.listen(PORT, () => {
   console.log("server is liestening on 5000");

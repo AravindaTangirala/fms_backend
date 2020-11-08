@@ -4,10 +4,7 @@
   "description": "Feedback Management System MERN Project",
   "main": "index.js",
   "scripts": {
-    "start": "node app.js",
-    "build": "npm run build",
-    "install-client": "npm install",
-    "heroku-postbuild": "npm run install-client && npm run build && cd server && npm start"
+    "start": "node app.js"
   },
   "keywords": [
     "FMS",
